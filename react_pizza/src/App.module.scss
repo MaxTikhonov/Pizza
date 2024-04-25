@@ -1,1 +1,8 @@
-@import './scss/mixins/mixins.scss';
+@use './scss/mixins/grid.scss' as *;
+
+
+.app {
+ background-color: yellow;
+ @include grid-container;
+ @include grid;
+}
