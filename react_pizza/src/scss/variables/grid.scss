@@ -15,7 +15,17 @@ $grid-container-large-max: 1367px !default;
 /// The minimal "huge" screen size (large desktop monitors).
 $grid-container-huge-min: $grid-container-large-max + 1px;
 /// The maximal "huge" screen size (large desktop monitors).
-$grid-container-huge-max: 1919px;
+$grid-container-huge-max: 1919px !default;
+$grid-container-2100-min: $grid-container-huge-max + 1px;
+$grid-container-2100-max: 2100px !default;
+$grid-container-2520-min: $grid-container-2100-max + 1px;
+$grid-container-2520-max: 2520px !default;
+$grid-container-3360-min: $grid-container-2520-max + 1px;
+$grid-container-3360-max: 3360px !default;
+$grid-container-5040-min: $grid-container-3360-max + 1px;
+$grid-container-5040-max: 5040px !default;
+$grid-container-6200-min: $grid-container-5040-max + 1px;
+$grid-container-6200-max: 6200px !default;
 
 /// The grid side paddings value for "tiny" screen size.
 $grid-padding-tiny: 12px !default;
@@ -78,6 +88,36 @@ $grid-template-huge: repeat(12, minmax(0, 1fr)) !default;
     --grid-padding-size: #{$grid-padding-huge};
     --grid-template: #{$grid-template-huge};
   }
+
+  // @media (min-width: $grid-container-2100-min) {
+  //   --grid-gutter-size: #{$grid-gutter-huge};
+  //   --grid-padding-size: #{$grid-padding-huge};
+  //   --grid-template: #{$grid-template-huge};
+  // }
+
+  // @media (min-width: $grid-container-2520-min) {
+  //   --grid-gutter-size: #{$grid-gutter-huge};
+  //   --grid-padding-size: #{$grid-padding-huge};
+  //   --grid-template: #{$grid-template-huge};
+  // }
+
+  // @media (min-width: $grid-container-3360-min) {
+  //   --grid-gutter-size: #{$grid-gutter-huge};
+  //   --grid-padding-size: #{$grid-padding-huge};
+  //   --grid-template: #{$grid-template-huge};
+  // }
+
+  // @media (min-width: $grid-container-5040-min) {
+  //   --grid-gutter-size: #{$grid-gutter-huge};
+  //   --grid-padding-size: #{$grid-padding-huge};
+  //   --grid-template: #{$grid-template-huge};
+  // }
+
+  // @media (min-width: $grid-container-6200-min) {
+  //   --grid-gutter-size: #{$grid-gutter-huge};
+  //   --grid-padding-size: #{$grid-padding-huge};
+  //   --grid-template: #{$grid-template-huge};
+  // }
 }
 
 /// The design system's grid gutter's variable size.
