@@ -1,8 +1,9 @@
+@use './scss/variables.scss' as *;
 @use './scss/mixins/grid.scss' as *;
 
-
 .app {
- background-color: yellow;
+ background-color: #FFDF8C;
  @include grid-container;
  @include grid;
+ padding-left: $indent-80;
 }

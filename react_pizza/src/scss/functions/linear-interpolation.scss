@@ -18,3 +18,16 @@
 
   @return calc(#{$m*100}vw #{$sign} #{$b});
 }
+
+@function linear-interpolation-clamp($x1, $y1, $x2, $y2) {
+  $m: math.div($y2 - $y1, $x2 - $x1);
+  $b: $y1 - $m * $x1;
+  $sign: "+";
+
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+
+  @return clamp(1rem, calc(#{$m*100}vw #{$sign} #{$b}), 10rem);
+}

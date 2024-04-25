@@ -3,19 +3,19 @@
 @use "grid" as *;
 
 @function _small-sizes-interpolation($min, $max) {
-  @return linear-interpolation($grid-container-small-min, $min, $grid-container-small-max, $max);
+  @return linear-interpolation-clamp($grid-container-small-min, $min, $grid-container-small-max, $max);
 }
 
 @function _medium-sizes-interpolation($min, $max) {
-  @return linear-interpolation($grid-container-medium-min, $min, $grid-container-medium-max, $max);
+  @return linear-interpolation-clamp($grid-container-medium-min, $min, $grid-container-medium-max, $max);
 }
 
 @function _large-sizes-interpolation($min, $max) {
-  @return linear-interpolation($grid-container-large-min, $min, $grid-container-large-max, $max);
+  @return linear-interpolation-clamp($grid-container-large-min, $min, $grid-container-large-max, $max);
 }
 
 @function _huge-sizes-interpolation($min, $max) {
-  @return linear-interpolation($grid-container-huge-min, $min, $grid-container-huge-max, $max);
+  @return linear-interpolation-clamp($grid-container-huge-min, $min, $grid-container-huge-max, $max);
 }
 
 $_indent-120-size-small-down: 48px;
