@@ -1,0 +1,14 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+html {
+  @include color-dark-theme-context {
+    background-color: $color-site-background;
+  }
+}
+
+body {
+  @include color-transition(color, background-color);
+  color: $color-text;
+  background-color: $color-site-background;
+}

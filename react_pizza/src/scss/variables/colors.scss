@@ -1,0 +1,111 @@
+////
+/// Design system's colors.
+/// @group colors
+/// @type Color
+/// @author Daniil Filippov <d.filippov@make.st>
+////
+
+/// A light gray color used in some backgrounds.
+$color-gray-6: rgba(#f1f1f1, 0.06) !default;
+
+/// A light gray color used for dividing lines.
+$color-gray-16: #CBCBCC !default;
+
+/// A gray color used for dark dividing lines.
+$color-gray-32: #AEADAE !default;
+
+/// A gray color for hint texts.
+$color-gray-64: #7D7D7D !default;
+
+/// A color for texts and rounded lines.
+$color-gray-100: #1B1B1B !default;
+
+/// A light gray color used in some backgrounds (dark theme).
+$color-white-4: #FFFFFF !default;
+
+/// A light gray color used for dividing lines (dark theme).
+$color-white-12: #EEEEEE !default;
+
+/// A gray color used for dark dividing lines (dark theme).
+$color-white-32: rgba(#fff, 0.32) !default;
+
+/// A gray color for hint texts (dark theme).
+$color-white-64: rgba(#fff, 0.64) !default;
+
+/// A color for texts and rounded lines.
+$color-white-100: #fff !default;
+
+/// An unique color for the site background in the dark theme.
+$color-warm-gray: #312f3b !default;
+
+/// A brand red color used in the logotype.
+$color-red: #E80F3B !default;
+
+/// A brand blue color.
+$color-blue: #3E29E3 !default;
+
+/// Awards gold color.
+$color-gold: #f9cc1f !default;
+
+/// Awards silver color.
+$color-silver: #bdbdda !default;
+$color-pink: #DD80ED !default;
+
+/// Awards bronze color.
+$color-bronze: #e2944f !default;
+$color-pink: #dd80ed !default;
+
+:root {
+  --color-text: #{$color-gray-100};
+  --color-site-background: #{$color-white-100};
+  --color-dividing-line: #{$color-gray-16};
+  --color-solid-dividing-line: #{$color-gray-32};
+  --color-hint: #{$color-gray-64};
+}
+
+html.dark {
+  --color-text: #{$color-white-100};
+  --color-site-background: #{$color-warm-gray};
+  --color-dividing-line: #{$color-white-12};
+  --color-solid-dividing-line: #{$color-white-32};
+  --color-hint: #{$color-white-64};
+}
+
+/// Default text color. Changes in the dark theme.
+$color-text: var(--color-text);
+
+/// A color for the site background. Changes in the dark theme.
+$color-site-background: var(--color-site-background);
+
+/// A color for the dividing lines. Changes in the dark theme.
+$color-dividing-line: var(--color-dividing-line);
+
+/// A color for the dark dividing lines. Changes in the dark theme.
+$color-solid-dividing-line: var(--color-solid-dividing-line);
+
+/// A color for the hint texts. Changes in the dark theme.
+$color-hint: var(--color-hint);
+
+/// All colors map.
+/// @type Map
+$color-map: (
+  site-background: $color-site-background,
+  text: $color-text,
+  hint: $color-hint,
+  dividing-line: $color-dividing-line,
+  solid-dividing-line: $color-solid-dividing-line,
+  warm-gray: $color-warm-gray,
+  red: $color-red,
+  blue: $color-blue,
+  gold: $color-gold,
+  silver: $color-silver,
+  bronze: $color-bronze,
+);
+
+/// Default color transition's parameters.
+/// @type List
+$color-transition-settings: linear 0.15s !default;
+
+/// The brand linear gradient's parameters.
+/// @type List
+$color-gradient: $color-blue, $color-red 70%, #eac8af;

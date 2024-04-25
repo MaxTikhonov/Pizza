@@ -1,0 +1,132 @@
+@use "./components.scss" as *;
+@use "./mixins.scss" as *;
+@use './variables.scss' as *;
+
+@font-face {
+  font-family: 'Graphik';
+  src: url("../fonts/Graphik-Regular-Web.eot");
+  src: url("../fonts/Graphik-Regular-Web.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Graphik-Regular-Web.woff2") format("woff2"),
+    url("../fonts/Graphik-Regular-Web.woff") format("woff"),
+    url("../fonts/Graphik-Regular-Web.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: 'Graphik';
+  src: url("../fonts/Graphik-Medium-Web.eot");
+  src: url("../fonts/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Graphik-Medium-Web.woff2") format("woff2"),
+    url("../fonts/Graphik-Medium-Web.woff") format("woff"),
+    url("../fonts/Graphik-Medium-Web.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: 'Graphik';
+  src: url("../fonts/Graphik-Bold-Web.eot");
+  src: url("../fonts/Graphik-Bold-Web.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Graphik-Bold-Web.woff2") format("woff2"),
+    url("../fonts/Graphik-Bold-Web.woff") format("woff"),
+    url("../fonts/Graphik-Bold-Web.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  column-gap: inherit;
+}
+
+a {
+  text-decoration: none;
+  cursor: url(../images/finger.svg), pointer;
+}
+
+button {
+  background-color: transparent;
+  outline-color: transparent;
+  border: 0;
+  cursor: url(../images/finger.svg), pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+body {
+  font-family: 'Graphik';
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-tap-highlight-color: $color-white-4;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: 'Graphik';
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+input {
+  outline: none;
+}
+
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li {
+  padding-top: $indent-16;
+}
+
+li:first-child {
+  padding-top: 0;
+}
+
+
+
+svg[role="img"] {
+  pointer-events: none;
+  overflow: visible;
+}
+
+.container {
+  @include grid-container;
+}
+
+.content {
+  @include grid-with-offset((small: 0, medium: 2, large: 3)) {
+    @include grid-columns-span((small: 4, medium: 6, large: 9));
+  }
+
+  width: 100%;
+}
+
+
+.sidebar-and-main {
+  @include grid;
+}

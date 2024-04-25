@@ -1,0 +1,9 @@
+.turbolinks--loading,
+.loading {
+
+  &,
+  & a {
+    // stylelint-disable-next-line
+    cursor: progress !important;
+  }
+}

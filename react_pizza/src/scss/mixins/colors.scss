@@ -1,0 +1,63 @@
+////
+/// A set of mixins to simplify the creation of styles with colors setup.
+/// @access public
+/// @group colors
+/// @author Daniil Filippov <d.filippov@make.st>
+////
+
+@use "sass:list";
+@use "../variables/colors" as *;
+
+/// A mixin to change the colors variables context to the dark theme.
+@mixin color-dark-theme-context {
+  $color-text: $color-white-100 !global;
+  $color-site-background: $color-warm-gray !global;
+  $color-dividing-line: $color-white-12 !global;
+  $color-solid-dividing-line: $color-white-32 !global;
+  $color-hint: $color-white-64 !global;
+
+  @content;
+
+  $color-text: var(--color-text) !global;
+  $color-site-background: var(--color-site-background) !global;
+  $color-dividing-line: var(--color-dividing-line) !global;
+  $color-solid-dividing-line: var(--color-solid-dividing-line) !global;
+  $color-hint: var(--color-hint) !global;
+}
+
+/// A mixin to change the colors variables context to the light theme.
+@mixin color-light-theme-context {
+  $color-text: $color-gray-100 !global;
+  $color-site-background: $color-white-100 !global;
+  $color-dividing-line: $color-gray-16 !global;
+  $color-solid-dividing-line: $color-gray-32 !global;
+  $color-hint: $color-gray-64 !global;
+
+  @content;
+
+  $color-text: var(--color-text) !global;
+  $color-site-background: var(--color-site-background) !global;
+  $color-dividing-line: var(--color-dividing-line) !global;
+  $color-solid-dividing-line: var(--color-solid-dividing-line) !global;
+  $color-hint: var(--color-hint) !global;
+}
+
+/// A mixin for the color transitions.
+/// @param {List} $properties [color] - A list of properties to apply transition.
+@mixin color-transition($properties...) {
+  @if list.length($properties) == 0 {
+    $properties: (color);
+  }
+
+  $value: "";
+
+  @each $subproperties in $properties {
+    @each $property in $subproperties {
+      $prefix: if($value == "", "", "#{$value}, ");
+      $value: #{$prefix}#{$property} #{$color-transition-settings};
+    }
+  }
+
+  // stylelint-disable-next-line
+  transition: $value;
+}

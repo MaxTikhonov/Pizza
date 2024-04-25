@@ -1,0 +1,66 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+body {
+  @include typo-make-text;
+  font-family: "Graphik", Helvetica, Arial, sans-serif;
+}
+
+h1.big {
+  @include typo-make-big-h1;
+}
+
+h1 {
+  @include typo-make-h1;
+}
+
+h2 {
+  @include typo-make-h2;
+}
+
+h3 {
+  @include typo-make-h3;
+}
+
+h4 {
+  @include typo-make-h4;
+}
+
+h5 {
+  @include typo-make-h5;
+}
+
+.lead {
+  @include typo-make-h4(false);
+}
+
+small {
+  @include typo-make-small;
+}
+
+strong,
+.strong {
+  font-weight: 500;
+}
+
+img {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+}
+
+.content {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .lead,
+  p {
+    margin-bottom: $indent-24;
+  }
+}

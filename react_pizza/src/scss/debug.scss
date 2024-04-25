@@ -1,0 +1,70 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.grid-checker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.grid-checker--inline {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  bottom: 0;
+  right: auto;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.grid-checker__container {
+  @include grid-container;
+  @include grid;
+  position: relative;
+  height: 100%;
+
+  &:before {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-color: rgba($color-red, 0.12);
+    border-style: solid;
+    border-width: 0 $grid-padding-size;
+    content: "";
+  }
+}
+
+.grid-checker__column {
+  position: relative;
+  background-color: $color-dividing-line;
+
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: $grid-gutter-size;
+    transform: translateX(-50%);
+    content: "";
+  }
+
+  @include screen-medium-down {
+    &:nth-last-child(-n + 4) {
+      display: none;
+    }
+  }
+
+  @include screen-small-down {
+    &:nth-last-child(-n + 8) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.icon {
+  width: 20px;
+  height: 20px;
+  transition: fill 0.1s linear;
+  fill: currentColor;
+
+  @include screen-huge-up {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  background-clip: text;
+  gap: 0;
+
+  .icon {
+    margin-right: $indent-12;
+  }
+
+  &.blur {
+    .icon-link__text {
+      background-position-x: -100%;
+    }
+  }
+
+  &:hover {
+    .icon-link__text {
+      background-position-x: 0;
+    }
+  }
+
+  &.no-transition {
+    .icon-link__text {
+      transition-duration: 0s;
+    }
+  }
+}
+
+.icon-link__text {
+  background-image: inherit;
+  background-position: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  border-bottom: inherit;
+  transition: background-position $color-transition-settings;
+}
