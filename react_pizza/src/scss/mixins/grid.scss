@@ -1,52 +1,37 @@
-////
-/// A set of mixins to simplify the creation of grid styles.
-/// @access public
-/// @group grid
-/// @author Daniil Filippov <d.filippov@make.st>
-////
-
 @use "sass:map";
 @use "media-queries" as *;
 @use "../variables/grid" as *;
 
-/// A mixin for the base styles of the grid container according to the design system.
 @mixin grid-container {
   padding-left: $grid-padding-size;
   padding-right: $grid-padding-size;
 }
 
-/// A mixin for the standard grid columns template according to the design system.
 @mixin grid {
   grid-template-columns: $grid-template;
   column-gap: $grid-gutter-size;
   display: grid;
 }
 
-/// A mixin for the standard grid columns template starting from the "small" screen size (mobile
-/// phones and up).
 @mixin grid-small-up {
   @include screen-small-up {
     @include grid;
   }
 }
 
-/// A mixin for the standard grid columns template starting from the "medium" screen size (tablets).
+
 @mixin grid-medium-up {
   @include screen-medium-up {
     @include grid;
   }
 }
 
-/// A mixin for the standard grid columns template starting from the "large" screen size (desktop
-/// monitors).
 @mixin grid-large-up {
   @include screen-large-up {
     @include grid;
   }
 }
 
-/// A mixin for the standard grid columns template starting from the "huge" screen size (large
-/// desktop monitors).
 @mixin grid-huge-up {
   @include screen-huge-up {
     @include grid;
@@ -56,9 +41,7 @@
 $_inner-grid: false;
 $_inner-grid-set: false;
 
-/// A mixin which enables the inner grid context. An usage of the `grid-columns-width`
-/// and `grid-columns-span` mixins inside it will lead to the appropriate `grid-template-columns`
-/// properties addition for the custom inner grid.
+
 @mixin grid-with-inner-context {
   $_inner-grid: true !global;
   @content;

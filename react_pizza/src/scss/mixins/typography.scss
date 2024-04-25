@@ -1,9 +1,3 @@
-////
-/// A set of mixins to simplify the creation of typography styles.
-/// @group typography
-/// @author Daniil Filippov <d.filippov@make.st>
-////
-
 @use "../variables/colors" as *;
 @use "../variables/typography" as *;
 
@@ -14,13 +8,15 @@
 @mixin typo-make-sizes($size, $isHeading: false, $letterSpacing: normal) {
   font-size: $size;
 
-  @if ($letterSpacing != normal) {
+  @if ($letterSpacing !=normal) {
     letter-spacing: $letterSpacing;
   }
 
   @if ($isHeading) {
     line-height: $typo-line-height-heading;
-  } @else {
+  }
+
+  @else {
     line-height: $typo-line-height-text;
   }
 }
@@ -31,48 +27,56 @@
 @mixin typo-make-big-digits($isHeading: true) {
   @include typo-make-sizes($typo-big-digits-size, $isHeading, $typo-big-digits-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the big h1 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-big-h1($isHeading: true) {
   @include typo-make-sizes($typo-big-h1-size, $isHeading, $typo-big-h1-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the h1 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-h1($isHeading: true) {
   @include typo-make-sizes($typo-h1-size, $isHeading, $typo-h1-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the h2 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-h2($isHeading: true) {
   @include typo-make-sizes($typo-h2-size, $isHeading, $typo-h2-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the h3 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-h3($isHeading: true) {
   @include typo-make-sizes($typo-h3-size, $isHeading, $typo-h3-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the h4 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-h4($isHeading: true) {
   @include typo-make-sizes($typo-h4-size, $isHeading, $typo-h4-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the h5 heading.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-h5($isHeading: true) {
   @include typo-make-sizes($typo-h5-size, $isHeading, $typo-h5-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the navigation link.
 /// @param {Boolean} $isHeading [true] - Whether styles are applying to some sort of heading.
 @mixin typo-make-navigation($isHeading: true) {
   @include typo-make-sizes($typo-navigation-size, $isHeading, $typo-navigation-letter-spacing);
 }
+
 /// A mixin for applying `font-size` and `line-height` values according to the design system for
 /// the base text.
 @mixin typo-make-text {
